@@ -1,70 +1,52 @@
-public class Consulta {
-  String cliente;
-  String data;
-  String hora;
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="utf-8">
+<head>
+	<title>AULAR</title>
+</head>
+<body>
+	<form method="GET">
+		nome<br>
+			<input type="text" name="nome"><br>
+		idade<br>
+			<input type="number" min="0" max="110" name="idade"><br>
+		email<br>
+			<input type="email" name="email"><br>
+		data do cadastro><br>
+			<input type="date" name="data"><br>
+		disciplina favorita<br>
+		<select name="DisFav">
+				<option value="html/css">html/css</option>
+				<option value="php">php</option>
+		</select><br>
+		curso<br>
+			<input type="radio" value="informática" name="Curso" checked>Informática<br>
+			<input type="radio" value="enfermagem"  name="Curso" checked>Enfermagem<br>
+		senha<br>
+			<input type="password" name="senha"><br>
+		Comentários<br>
+		<textarea name="Comentários"></textarea>
+		<br><br>
+		<button>enviar</button>
+	</form>
 
-  public void marcarData(String data){
-    this.data = data;
-  }
-  public void marcaHora(String hora){
-    this.hora = hora;
-  }
-  public void definirCliente(String cliente){
-    this.cliente = cliente;
-  }
-  public String getDados(){
-    return " marcada para " + this.data + "  " +  "Consulta do cliente " + this.cliente  + this.hora;
-  }
-  
-}
-
-public class Refeição {
-  String cliente;
-  String data;
-  String hora;
-  String nomeDaRefeicao;
-  double caloriasGanhas;
-
-  public void marcardata(String data){
-    this.data = data;
-  }
-
-  public void marcaHora(String hora){
-    this.hora = hora;
-  }
-
-  public void definirCliente (String cliente){
-    this.cliente = cliente;
-  }
-
- public String getDados(){
-  return "Refeição do cliente " + this.cliente + "marcada para " + this.data + " " + this.hora;
- }
- 
-}
-
-
-import java.util.List;
-
-public class BateriaDeExercicios {
-   
-
-  private String cliente;
-  private String data;
-  private String hora;
-  private List<String> exercicios;
-  private double caloriasPerdidas;
-
-  public void marcardata(String data){
-    this.data = data;
-  }
-  public void marcaHora(String hora){
-    this.hora = hora;
-  }
-  public void definirCliente(String cliente){
-    this.cliente = cliente;
-  }
-  public String getDados(){
-    return " Bateria de exercicios do cliente " + this.cliente + " marcada para " + this.data + " " + this.hora;
-  }
-}
+</body>
+</html>
+<?php
+		$nome = $_GET['nome'];
+	echo "nome: " . $nome;
+		$idade = $_GET['idade'];
+	echo "idade: " . $idade;
+		$email = $_GET['email'];
+	echo "email: " . $email;
+		$data_do_cadastro = $_GET['data'];
+	echo "data do cadastro: " . $data_do_cadastro;
+		$disciplina_favorita = $_GET["DisFav"];
+	echo "disciplina favorita " . $disciplina_favorita;
+		$curso = $_GET['Curso'];
+	echo "curso " . $curso;
+		$senha = $_GET['senha'];
+	echo "senha " . $senha;
+		$Comentários = $_GET['Comentários'];
+	echo "Comentários " . $Comentários;
+?>
